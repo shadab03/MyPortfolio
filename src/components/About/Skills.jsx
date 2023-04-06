@@ -3,10 +3,18 @@ import { motion } from 'framer-motion'
 
 import SkillData from '../../../allSkills.json';
 
+const bgColor = {
+    default: 'bg-dark',
+    'amber': 'bg-amber-500',
+    'lime': 'bg-lime-500',
+    'teal': 'bg-teal-500',
+    'fuchsia':'bg-fuchsia-500'
+  }
+
 const Skill =({props}) =>{
      const {name, x, y, color} = props;
     return (
-        <motion.div className={`flex items-center justify-center rounded-full font-semibold text-light py-3 px-6 shadow-dark cursor-pointer absolute ${(color != null ? color : 'bg-dark')}`} 
+        <motion.div className={`flex items-center justify-center rounded-full font-semibold text-light py-3 px-6 shadow-dark cursor-pointer absolute ${bgColor[color]}`} 
         whileHover={({scale:1.05})}
         initial ={{x:0,y:0}}
         animate={{x:x,y:y}}
